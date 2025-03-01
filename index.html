@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Mobile Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Primary Meta Tags -->
+    <title>Is This a Haiku? | Free Online Haiku Syllable Counter</title>
+    <meta name="description"
+        content="Check if your poem follows the traditional haiku format (5-7-5 syllable structure) with our free online haiku checker. Learn how to write a haiku poem, count syllables accurately, and create beautiful Japanese-style poetry." />
+    <meta name="keywords"
+        content="haiku, poetry, syllable counter, interactive, haiku checker, how to write a haiku, haiku syllable counter online, traditional haiku format, 5-7-5 syllable pattern, Japanese poetry, haiku poem maker, haiku writing guide" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Is This a Haiku? | Free Online Haiku Syllable Counter" />
+    <meta property="og:description"
+        content="Use our free haiku checker to see if your poem matches the traditional 5-7-5 syllable pattern. Write, test, and share your haikus with our easy-to-use online tool!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://checkyourhaiku.com" />
+    <!-- Replace with your image URL if available -->
+    <meta property="og:image" content="https://checkyourhaiku.com/haiku-og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Is This a Haiku? | Free Online Haiku Syllable Counter" />
+    <meta name="twitter:description"
+        content="Check your haiku for the perfect 5-7-5 syllable count with our interactive tool. Learn how to write beautiful haiku poetry online." />
+    <meta name="twitter:image" content="https://checkyourhaiku.com/haiku-og-image.jpg" />
+
+    <!-- Structured Data Markup - Enhanced with FAQ and HowTo schemas -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Is This a Haiku? | Free Online Haiku Syllable Counter",
+            "description": "An interactive tool to check if your poem follows the traditional haiku format (5-7-5 syllable structure).",
+            "url": "https://checkyourhaiku.com",
+            "mainEntity": [{
+                "@type": "FAQPage",
+                "mainEntity": [{
+                    "@type": "Question",
+                    "name": "What is a haiku?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "A haiku is a traditional form of Japanese poetry consisting of three lines with a 5-7-5 syllable pattern. Haikus typically focus on nature and include a seasonal reference."
+                    }
+                }, {
+                    "@type": "Question",
+                    "name": "How do I write a haiku?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "To write a haiku, create a poem with three lines following the 5-7-5 syllable pattern. The first line should have 5 syllables, the second line 7 syllables, and the third line 5 syllables. Traditional haikus often include nature themes and seasonal references."
+                    }
+                }, {
+                    "@type": "Question",
+                    "name": "How do I count syllables in a haiku?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "To count syllables in a haiku, break down each word into its spoken sound units. For example, 'haiku' has two syllables (hai-ku). Our online haiku checker automatically counts syllables for you to ensure your poem follows the traditional 5-7-5 pattern."
+                    }
+                }]
+            }, {
+                "@type": "HowTo",
+                "name": "How to Write a Haiku Poem",
+                "description": "A step-by-step guide to creating a traditional haiku poem with the correct syllable pattern.",
+                "step": [{
+                    "@type": "HowToStep",
+                    "name": "Choose a nature theme",
+                    "text": "Select a nature-based theme or seasonal element for your haiku."
+                }, {
+                    "@type": "HowToStep",
+                    "name": "Write the first line with 5 syllables",
+                    "text": "Compose your first line with exactly 5 syllables."
+                }, {
+                    "@type": "HowToStep",
+                    "name": "Write the second line with 7 syllables",
+                    "text": "Create your second line with exactly 7 syllables."
+                }, {
+                    "@type": "HowToStep",
+                    "name": "Write the third line with 5 syllables",
+                    "text": "Finish with a third line containing exactly 5 syllables."
+                }, {
+                    "@type": "HowToStep",
+                    "name": "Check your haiku",
+                    "text": "Use our online haiku checker to verify your syllable count and structure."
+                }]
+            }]
+        }
+    </script>
+
+    <!-- Add favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍃</text></svg>"
+        type="image/svg+xml">
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍃</text></svg>">
+
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Add Google Analytics in the head section -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PW0FN99JWT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-PW0FN99JWT');
+    </script>
+
+    <style>
+        /* Basic reset and layout */
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #45a049;
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --card-background: #ffffff;
+            --border-color: #e0e0e0;
+            --hover-color: #f5f5f5;
+            --footer-color: #f5f5f5;
+            --input-background: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #64b5f6;
+                --secondary-color: #81c784;
+                --background-color: #121212;
+                --text-color: #e0e0e0;
+                --card-background: #1e1e1e;
+                --border-color: #333333;
+                --hover-color: #2d2d2d;
+                --footer-color: #1e1e1e;
+                --input-background: #2d2d2d;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+        }
+
+        .ad {
+            width: 15%;
+            padding: 10px;
+            background-color: var(--card-background);
+            text-align: center;
+            border-radius: 8px;
+            margin: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+        }
+
+        /* Typography */
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-top: 1.5em;
+            text-align: center;
+        }
+
+        .explanation {
+            color: var(--text-color);
+            opacity: 0.9;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Input styling */
+        .haiku-input {
+            width: 100%;
+            height: 120px;
+            padding: 15px;
+            font-size: 1.1em;
+            box-sizing: border-box;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--input-background);
+            color: var(--text-color);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            resize: vertical;
+        }
+
+        .haiku-input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        /* Button styling */
+        .btn {
+            display: inline-block;
+            margin: 15px auto;
+            padding: 12px 24px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Examples styling */
+        #examples {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        #examples li {
+            cursor: pointer;
+            padding: 12px;
+            margin: 8px auto;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            max-width: 400px;
+            transition: all 0.3s ease;
+            background-color: var(--card-background);
+        }
+
+        #examples li:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Results styling */
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: var(--card-background);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none;
+            /* Hide by default */
+        }
+
+        .result.show {
+            display: block;
+            /* Show when has content */
+        }
+
+        #realtime-count {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: var(--card-background);
+        }
+
+        #realtime-count:empty {
+            display: none;
+        }
+
+        #realtime-count ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #realtime-count li {
+            margin: 5px 0;
+            color: var(--text-color);
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: var(--footer-color);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .ad {
+                width: auto;
+                margin: 10px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        /* Enhanced syllable counter display */
+        .syllable-display {
+            background: var(--card-background);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none;
+            /* Hide by default */
+        }
+
+        .syllable-display.show {
+            display: block;
+            /* Show when has content */
+        }
+
+        .syllable-line {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+            background: var(--hover-color);
+            transition: all 0.3s ease;
+        }
+
+        .syllable-line.correct {
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .syllable-line.incorrect {
+            border-left: 4px solid #e74c3c;
+        }
+
+        .syllable-line.empty {
+            opacity: 0.6;
+            border-left: 4px solid var(--border-color);
+        }
+
+        .line-number {
+            width: 60px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .syllable-count {
+            width: 50px;
+            font-weight: bold;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .line-text {
+            flex: 1;
+            padding-left: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .correct .syllable-count {
+            color: var(--secondary-color);
+        }
+
+        .incorrect .syllable-count {
+            color: #e74c3c;
+        }
+
+        /* Center all buttons */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        /* Update theme toggle button to hide on mobile */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: -60px;
+            z-index: 100;
+            font-size: 24px;
+            background: var(--card-background);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: var(--text-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hide theme toggle on mobile */
+        @media (max-width: 768px) {
+            .theme-toggle {
+                display: none;
+            }
+        }
+
+        /* Update share buttons styling */
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 0 5px;
+            padding: 10px 15px;
+        }
+
+        .share-btn i {
+            font-size: 1.2em;
+        }
+
+        /* Adjust button container for sharing */
+        #sharing .btn-container {
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        /* Fix for X icon */
+        .fa-x-twitter,
+        .fa-twitter-x {
+            font-family: "Font Awesome 6 Brands";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ad" id="ad-left" aria-label="Advertisement" role="complementary">
+            <!-- Left ad placement -->
+            <p>Ad Space</p>
+        </div>
+        <div class="content" role="main">
+            <h1>Is This a Haiku? | Free Online Haiku Syllable Counter</h1>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode"
+                title="Toggle dark/light mode">🌞</button>
+            <p class="explanation">
+                Enter your poem below and we'll check if it follows the traditional haiku format (5-7-5 syllable
+                pattern). Learn how to write a beautiful haiku poem with our free online syllable counter and checker.
+            </p>
+
+            <textarea class="haiku-input" id="haiku-input" placeholder="Enter your haiku here..."
+                aria-label="Enter your haiku text here" role="textbox"></textarea>
+
+            <div class="btn-container">
+                <button class="btn" id="check-btn" aria-label="Check if your text is a haiku">Check Haiku</button>
+            </div>
+
+            <div id="realtime-count" aria-live="polite" role="status"></div>
+            <div class="result" id="result" aria-live="polite" role="status"></div>
+
+            <section aria-labelledby="examples-heading">
+                <h2 id="examples-heading">Interactive Haiku Examples</h2>
+                <p>Click on any example below to see a perfect 5-7-5 syllable haiku pattern:</p>
+                <ul id="examples" role="list">
+                    <li class="example" data-text="An old silent pond
+A frog jumps into the pond
+Splash! Silence again" role="button" tabindex="0" aria-label="Example haiku: An old silent pond...">
+                        <div class="example-title">An old silent pond...</div>
+                    </li>
+                    <li class="example" data-text="The first cold morning
+Wind chimes and a copper cup
+Ring winter's arrival" role="button" tabindex="0" aria-label="Example haiku: The first cold morning...">
+                        <div class="example-title">The first cold morning...</div>
+                    </li>
+                    <li class="example" data-text="In the moonlit night
+The young bamboo grows taller
+Reaching for the stars" role="button" tabindex="0" aria-label="Example haiku: In the moonlit night...">
+                        <div class="example-title">In the moonlit night...</div>
+                    </li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="haiku-guide">
+                <h2 id="haiku-guide">How to Write a Haiku Poem</h2>
+                <p>Follow these simple steps to create your own traditional Japanese haiku:</p>
+                <ol>
+                    <li><strong>First line:</strong> Write exactly 5 syllables</li>
+                    <li><strong>Second line:</strong> Write exactly 7 syllables</li>
+                    <li><strong>Third line:</strong> Write exactly 5 syllables</li>
+                    <li><strong>Theme:</strong> Traditional haikus often focus on nature and include seasonal references
+                    </li>
+                    <li><strong>Imagery:</strong> Use vivid, sensory language to create a clear image</li>
+                </ol>
+                <p>Use our free online haiku syllable counter above to check if your poem follows the correct pattern!
+                </p>
+            </section>
+
+            <section aria-labelledby="sharing-heading">
+                <h2 id="sharing-heading">Share This Haiku Checker</h2>
+                <div class="btn-container" id="sharing">
+                    <a href="https://twitter.com/intent/tweet?text=Check%20if%20your%20poem%20is%20a%20haiku%20with%20this%20free%20online%20tool!&url=https://checkyourhaiku.com"
+                        target="_blank" rel="noopener" class="btn share-btn" aria-label="Share on X">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                        Share on X
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://checkyourhaiku.com" target="_blank"
+                        rel="noopener" class="btn share-btn" aria-label="Share on Facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        Share on Facebook
+                    </a>
+                </div>
+            </section>
+        </div>
+        <div class="ad" id="ad-right" aria-label="Advertisement" role="complementary">
+            <!-- Right ad placement -->
+            <p>Ad Space</p>
+        </div>
+    </div>
+    <footer class="footer" role="contentinfo">
+        <a href="https://checkyourhaiku.com" aria-label="Return to homepage">Is This a Haiku? | Free Online Haiku
+            Syllable Counter</a>
+        <p>The perfect tool for writing and checking traditional 5-7-5 syllable haiku poems</p>
+    </footer>
+
+    <script>
+        // Advanced syllable counter for accurate haiku analysis
+        function countSyllables(line) {
+            line = line.toLowerCase();
+            // Remove any non-letter characters except spaces and hyphens.
+            line = line.replace(/[^a-z\s-]/g, '');
+            const words = line.split(/\s+/);
+            let syllableCount = 0;
+
+            // Common exceptions to standard syllable rules.
+            const exceptions = {
+                "simile": 3,
+                "forever": 3,
+                "beautiful": 3,
+                "poetry": 3,
+                "every": 2,
+                "different": 3,
+                "interesting": 4,
+                "literally": 4,
+                "probably": 3,
+                "science": 2,
+                "area": 3,
+                "being": 2,
+                "create": 2,
+                "poem": 1,
+                "poems": 1,
+                "hour": 2,
+                "fire": 2,
+                "quiet": 2,
+                "business": 2,
+                "evening": 2,
+                "seventh": 2,
+                "rhythm": 2,
+                "arrival": 2
+            };
+
+            words.forEach(word => {
+                if (!word.length) return;
+
+                // Handle hyphenated words by splitting and summing each part.
+                const parts = word.split('-');
+                parts.forEach(part => {
+                    if (!part.length) return;
+
+                    // Check for exceptions.
+                    if (exceptions[part]) {
+                        syllableCount += exceptions[part];
+                    } else {
+                        let count = countSyllablesInWord(part);
+                        // If a word ends with "s", try counting it without the "s".
+                        if (part.endsWith("s") && part.length > 3) {
+                            let singularCount = countSyllablesInWord(part.slice(0, -1));
+                            if (singularCount < count) {
+                                count = singularCount;
+                            }
+                        }
+                        syllableCount += count;
+                    }
+                });
+            });
+
+            return syllableCount;
+        }
+
+        function countSyllablesInWord(word) {
+            // If the word is very short, assume one syllable.
+            if (word.length <= 3) return 1;
+
+            // Remove a trailing 'e' if it's likely silent, except when the word ends with "le"
+            let modified = word.replace(/([^aeiouy])e\b/g, '$1');
+
+            // Count groups of vowels (treating consecutive vowels as one group).
+            const groups = modified.match(/[aeiouy]+/g);
+            let count = groups ? groups.length : 0;
+
+            // Handle special case: words ending with a consonant + "le" (e.g., "bottle").
+            if (word.match(/[^aeiouy]le\b/)) {
+                count += 1;
+            }
+
+            return count > 0 ? count : 1;
+        }
+
+        // Update real-time syllable counts for each line
+        function updateSyllableCount() {
+            const text = document.getElementById('haiku-input').value;
+            const lines = text.split(/[,\n]/).map(line => line.trim()).filter(line => line.length > 0);
+
+            // Clear the display if no input
+            if (lines.length === 0) {
+                document.getElementById('realtime-count').innerHTML = '';
+                return;
+            }
+
+            const expectedPattern = [5, 7, 5];
+
+            let html = '<div class="syllable-display show">';
+            lines.forEach((line, index) => {
+                if (index < 3) {
+                    const count = countSyllables(line);
+                    const expected = expectedPattern[index];
+                    const isCorrect = count === expected;
+
+                    html += `
+                        <div class="syllable-line ${isCorrect ? 'correct' : 'incorrect'}">
+                            <span class="line-number">Line ${index + 1}:</span>
+                            <span class="syllable-count">${count}/${expected}</span>
+                            <span class="line-text">${line}</span>
+                        </div>`;
+                }
+            });
+
+            // Add placeholder lines if needed
+            for (let i = lines.length; i < 3; i++) {
+                html += `
+                    <div class="syllable-line empty">
+                        <span class="line-number">Line ${i + 1}:</span>
+                        <span class="syllable-count">0/${expectedPattern[i]}</span>
+                        <span class="line-text">...</span>
+                    </div>`;
+            }
+
+            html += '</div>';
+            document.getElementById('realtime-count').innerHTML = html;
+        }
+
+        document.getElementById('haiku-input').addEventListener('input', updateSyllableCount);
+
+        // Check Haiku
+        document.getElementById('check-btn').addEventListener('click', function () {
+            const text = document.getElementById('haiku-input').value.trim();
+            const lines = text.split(/\n/).filter(line => line.trim().length > 0);
+            let resultText = '';
+            const resultElement = document.getElementById('result');
+
+            if (!text) {
+                resultElement.innerHTML = '';
+                resultElement.classList.remove('show');
+                return;
+            }
+
+            if (lines.length !== 3) {
+                resultText = 'A haiku should have exactly 3 lines.';
+            } else {
+                const syllablePattern = [5, 7, 5];
+                let valid = true;
+                let errors = '';
+                for (let i = 0; i < 3; i++) {
+                    const syllables = countSyllables(lines[i]);
+                    if (syllables !== syllablePattern[i]) {
+                        valid = false;
+                        errors += 'Line ' + (i + 1) + ' has ' + syllables + ' syllables (expected ' + syllablePattern[i] + ').<br>';
+                    }
+                }
+                resultText = valid ? 'Yes, this looks like a haiku!' : 'Not a haiku.<br>' + errors;
+            }
+
+            resultElement.innerHTML = resultText;
+            resultElement.classList.add('show');
+        });
+
+        // Add input event listener to hide result when typing
+        document.getElementById('haiku-input').addEventListener('input', function () {
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = '';
+            resultElement.classList.remove('show');
+        });
+
+        // Interactive examples: load example into textarea when clicked
+        document.querySelectorAll('.example').forEach(function (exampleItem) {
+            exampleItem.addEventListener('click', function () {
+                const text = this.getAttribute('data-text');
+                document.getElementById('haiku-input').value = text;
+                updateSyllableCount();
+            });
+        });
+
+        // Update theme toggle functionality to remember user preference
+        // Check for saved theme preference or use system preference
+        let isDark = localStorage.getItem('darkMode');
+        if (isDark === null) {
+            // If no preference is saved, use system preference
+            isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        } else {
+            // Convert string to boolean
+            isDark = isDark === 'true';
+        }
+
+        const themeToggle = document.getElementById('theme-toggle');
+
+        // Apply theme on page load
+        applyTheme();
+
+        function toggleTheme() {
+            isDark = !isDark;
+            // Save preference to localStorage
+            localStorage.setItem('darkMode', isDark);
+            applyTheme();
+        }
+
+        function applyTheme() {
+            document.documentElement.style.setProperty('--background-color', isDark ? '#121212' : '#ffffff');
+            document.documentElement.style.setProperty('--text-color', isDark ? '#e0e0e0' : '#333333');
+            document.documentElement.style.setProperty('--card-background', isDark ? '#1e1e1e' : '#ffffff');
+            document.documentElement.style.setProperty('--border-color', isDark ? '#333333' : '#e0e0e0');
+            document.documentElement.style.setProperty('--hover-color', isDark ? '#2d2d2d' : '#f5f5f5');
+            document.documentElement.style.setProperty('--footer-color', isDark ? '#1e1e1e' : '#f5f5f5');
+            document.documentElement.style.setProperty('--input-background', isDark ? '#2d2d2d' : '#ffffff');
+            themeToggle.textContent = isDark ? '🌞' : '🌙';
+            themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+
+            // Announce theme change to screen readers (only when toggled, not on initial load)
+            if (document.body.contains(themeToggle)) {
+                const announcement = document.createElement('div');
+                announcement.setAttribute('aria-live', 'polite');
+                announcement.setAttribute('role', 'status');
+                announcement.style.position = 'absolute';
+                announcement.style.width = '1px';
+                announcement.style.height = '1px';
+                announcement.style.overflow = 'hidden';
+                announcement.textContent = isDark ? 'Dark mode enabled' : 'Light mode enabled';
+                document.body.appendChild(announcement);
+                setTimeout(() => document.body.removeChild(announcement), 1000);
+            }
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // Make example items keyboard accessible
+        document.querySelectorAll('.example').forEach(function (exampleItem) {
+            exampleItem.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const text = this.getAttribute('data-text');
+                    document.getElementById('haiku-input').value = text;
+                    updateSyllableCount();
+                    document.getElementById('haiku-input').focus();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
